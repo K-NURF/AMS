@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('user_type')->nullable();
-            $table->string('course');
-            $table->string('phone_number');
-            $table->string('country');
+            $table->string('course')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->string('country')->nullable();
             $table->string('religion')->nullable();
             $table->string('high_school')->nullable();
             $table->date('DOB')->nullable();
