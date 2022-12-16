@@ -16,6 +16,7 @@ class StudentController extends Controller
             'phone_number' => 'required',
             'country' => 'required',
             'course' => 'required',
+            'user_type' => 'required',
         ]);
 
         $applicant = User::create($data);

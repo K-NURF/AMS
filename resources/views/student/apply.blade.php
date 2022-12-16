@@ -18,6 +18,8 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
+        <input type="hidden"name="user_type"value="applicant">
+
         <!-- Phone number -->
         <div class="mt-4">
             <x-input-label for="phone_number" :value="__('phone_number')" />
@@ -29,7 +31,7 @@
         <!-- Country -->
         <div class="mt-4">
             <x-input-label for="country" :value="__('country')" />
-            <select>
+            <select name="country" value="{{ old('country') }}">
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
                 <option value="Albania">Albania</option>
@@ -286,7 +288,7 @@
         {{-- course --}}
         <div class="mt-4">
             <x-input-label for="course" :value="__('course')" />
-            <select>
+            <select name="course" value="{{ old('course') }}">
                 <option value="---Diploma Programmes---">---Diploma Programmes---</option>
                 <option value="Diploma in Business Creation and Entrepreneurship">Diploma in Business Creation and
                     Entrepreneurship</option>

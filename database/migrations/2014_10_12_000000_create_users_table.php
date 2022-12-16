@@ -22,10 +22,10 @@ return new class extends Migration
             $table->string('country');
             $table->string('religion')->nullable();
             $table->string('high_school')->nullable();
-            $table->date('DOB');
+            $table->date('DOB')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
