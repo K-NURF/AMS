@@ -1,17 +1,22 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-l text-gray-800 leading-tight h-4">
             ADMINISTRATOR
         </h2>
     </x-slot>
 
     <!-- The sidebar -->
-<div class="sidebar">
-    <a class="active" href="#home">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-  </div>
+    <div class="sidenav">
+        <button class="dropdown-btn">Students
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="/student_applicants">New Applicants</a>
+          <a href="/all_students">All Students</a>
+        </div>
+        <a href="#">Lecturers</a>
+        <a href="#">Staff</a>
+      </div>
   
   <!-- Page content -->
   <div class="content">
@@ -25,5 +30,23 @@
         </div>
     </div>
   </div>
+
+  <script>
+    //* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+  </script>
 
 </x-app-layout>

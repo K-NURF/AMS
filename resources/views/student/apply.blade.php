@@ -290,38 +290,38 @@
             <x-input-label for="course" :value="__('course')" />
             <select name="course" value="{{ old('course') }}">
                 <option value="---Diploma Programmes---">---Diploma Programmes---</option>
-                <option value="Diploma in Business Creation and Entrepreneurship">Diploma in Business Creation and
+                <option value="DBCE">Diploma in Business Creation and
                     Entrepreneurship</option>
-                <option value="Diploma in Journalism and New Media">Diploma in Journalism and New Media</option>
-                <option value="Diploma in Procurement">Diploma in Procurement</option>
-                <option value="Diploma in International Relations">Diploma in International Relations</option>
-                <option value="Diploma in Business Management">Diploma in Business Management</option>
-                <option value="Diploma in Business Information Technology">Diploma in Business Information Technology
+                <option value="DJNM">Diploma in Journalism and New Media</option>
+                <option value="DPro">Diploma in Procurement</option>
+                <option value="DIR">Diploma in International Relations</option>
+                <option value="DBM">Diploma in Business Management</option>
+                <option value="DBIT">Diploma in Business Information Technology
                 </option>
                 <option value=""></option>
                 <option value="---Undergraduate---">---Undergraduate---</option>
-                <option value="Bachelor of Commerce">Bachelor of Commerce</option>
-                <option value="Bachelor of Tourism Management">Bachelor of Tourism Management</option>
-                <option value="Bachelor of Hospitality Management">Bachelor of Hospitality Management</option>
-                <option value="Bachelor of Business Science: Finance">Bachelor of Business Science: Finance</option>
-                <option value="Bachelor of Business Science: Financial Economics">Bachelor of Business Science:
+                <option value="BC">Bachelor of Commerce</option>
+                <option value="BTM">Bachelor of Tourism Management</option>
+                <option value="BHM">Bachelor of Hospitality Management</option>
+                <option value="BBS:Finance">Bachelor of Business Science: Finance</option>
+                <option value="BBS:Financial Economics">Bachelor of Business Science:
                     Financial Economics</option>
-                <option value="Bachelor of Business Science: Actuarial Science">Bachelor of Business Science: Actuarial
+                <option value="BBS: Actuarial Science">Bachelor of Business Science: Actuarial
                     Science</option>
-                <option value="Bachelor of Science in Informatics and Computer Science">Bachelor of Science in
+                <option value="BICS">Bachelor of Science in
                     Informatics and Computer Science</option>
-                <option value="Bachelor of Business Information Technology">Bachelor of Business Information Technology
+                <option value="BBIT">Bachelor of Business Information Technology
                 </option>
-                <option value="Bachelor of Science in Telecommunications">Bachelor of Science in Telecommunications
+                <option value="BST">Bachelor of Science in Telecommunications
                 </option>
-                <option value="Bachelor of Laws">Bachelor of Laws</option>
-                <option value="Bachelor of Arts in Communication Studies">Bachelor of Arts in Communication Studies
+                <option value="BL">Bachelor of Laws</option>
+                <option value="BACS">Bachelor of Arts in Communication Studies
                 </option>
-                <option value="Bachelor of Arts in International Studies">Bachelor of Arts in International Studies
+                <option value="BAIS">Bachelor of Arts in International Studies
                 </option>
-                <option value="Bachelor of Science in Supply Chain and Operations Management">Bachelor of Science in
+                <option value="BSSCOM">Bachelor of Science in
                     Supply Chain and Operations Management</option>
-                <option value="Bachelor of Financial Services">Bachelor of Financial Services</option>
+                <option value="BFS">Bachelor of Financial Services</option>
             </select>
             <x-input-error :messages="$errors->get('course')" class="mt-2" />
         </div>

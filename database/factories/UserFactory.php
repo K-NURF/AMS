@@ -19,10 +19,10 @@ class UserFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'email' => 'test@example.com',
+            'email' => fake()->email(),
+            'phone_number' => fake()->numerify('254#########'),
+            'country' => 'Kenya',
             'email_verified_at' => now(),
-            'password' => '$2y$10$T2rH4.lab5y556n.LO3OOO7nzUDAn5Vikp0O//3aAFS9P3//BMst6', // password
-            'user_type' => 'admin',
             'remember_token' => Str::random(10),
         ];
     }
