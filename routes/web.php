@@ -26,9 +26,21 @@ Route::get('/apply', function () {
 
 Route::post('/apply', [StudentController::class, 'apply']);
 
-Route::get('/dashboard', function () {
+Route::get('/admin', function () {
     return view('admin.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('admin');
+
+Route::get('/student', function () {
+    return view('students.dashboard');
+})->middleware(['auth', 'verified']);
+
+Route::get('/lecturer', function () {
+    return view('lecturers.dashboard');
+})->middleware(['auth', 'verified']);
+
+Route::get('/staff', function () {
+    return view('staff.dashboard');
+})->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -36,6 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
     Route::get('/applicants', [AdminController::class, 'applicants']);
+    Route::get('/all_students', [AdminController::class, 'all_students']);
 });
 
 
