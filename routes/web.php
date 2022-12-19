@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/apply', function () {
-    return view('student.apply');
+    return view('guests.apply');
 });
 
 Route::post('/apply', [StudentController::class, 'apply']);
