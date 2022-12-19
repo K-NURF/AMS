@@ -30,7 +30,7 @@ Route::get('/admin', function () {
     return view('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('admin');
 
-Route::get('/student', function () {
+Route::get('/students', function () {
     return view('student.dashboard');
 })->middleware(['auth', 'verified']);
 
