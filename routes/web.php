@@ -31,7 +31,7 @@ Route::get('/admin', function () {
 })->middleware(['auth', 'verified'])->name('admin');
 
 Route::get('/student', function () {
-    return view('students.dashboard');
+    return view('student.dashboard');
 })->middleware(['auth', 'verified']);
 
 Route::get('/lecturer', function () {
@@ -42,19 +42,15 @@ Route::get('/staff', function () {
     return view('staff.dashboard');
 })->middleware(['auth', 'verified']);
 
-Route::get('/students',function(){
-    return view('student.dashboard');
-});
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    
+
     Route::get('/applicants', [AdminController::class, 'applicants']);
     Route::get('/all_students', [AdminController::class, 'all_students']);
 });
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
