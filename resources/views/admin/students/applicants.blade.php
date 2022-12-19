@@ -2,13 +2,22 @@
     @include('admin.partials._sidebar')
 
     <div class="main">
-        @foreach ($applicants as $applicant)
-            <p>{{ $applicant->name }}</p>
-            <p>{{ $applicant->email }}</p>
-            <p>{{ $applicant->phone_number }}</p>
-            <p>{{ $applicant->country }}</p>
-            <br>
-        @endforeach
+        <x-card>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>email</th>
+                <th>Phone Number</th>
+                <th>Country</th>
+                <th> </th>
+                <th> </th>
+            </tr>
+            @foreach ($applicants as $applicant)
+                <x-applicant-card :applicant="$applicant" />
+            @endforeach
+        </table>
+</x-card>
     </div>
 
 </x-app-layout>
