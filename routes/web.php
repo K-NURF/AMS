@@ -42,6 +42,10 @@ Route::get('/staff', function () {
     return view('staff.dashboard');
 })->middleware(['auth', 'verified']);
 
+Route::get('/students',function(){
+    return view('student.dashboard');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
