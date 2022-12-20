@@ -1,18 +1,16 @@
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     
-    <a href="#">Registration</a>
-    <a href="#">coursework</a>
-    <a href="#">Grades</a>
-    <a href="#">Progress</a>
+    <a href="/availableunits">Registration</a>
+    <a href="/registeredunits">coursework</a>
+    <a href="/grades">Grades</a>
+    <a href="/progress">Progress</a>
     
     
   </div>
   
   <div id="main">
-    
-    
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; menu</span>
+ <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; menu</span>
   </div>
   
   <script>

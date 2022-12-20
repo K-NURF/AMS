@@ -1,13 +1,18 @@
 <x-app-layout>
+
+    
+    
     <x-slot name="header">
+        
+    
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             STUDENT
         </h2>
+        @include('student.partials._sidebar2')
     </x-slot>
 
-    
-        @include('student.partials._sidebar2')
-    
+  </div>
+
 
   <div class="content">
     <div class="py-12">
