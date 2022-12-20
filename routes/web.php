@@ -19,12 +19,18 @@ use App\Http\Controllers\StudentController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/apply', function () {
-    return view('guests.apply');
+Route::get('/home', function () {
+    return view('home');
 });
 
-Route::post('/apply', [StudentController::class, 'apply']);
+Route::middleware('guest')->group(function () {
+    Route::get('/apply', function () {
+        return view('guests.apply');
+    });
+
+    Route::post('/apply', [StudentController::class, 'apply']);
+});
+
 
 Route::get('/admin', function () {
     return view('admin.dashboard');
