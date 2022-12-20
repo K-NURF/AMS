@@ -38,15 +38,7 @@ Route::get('/admin', function () {
 
 Route::get('/students', function () {
     return view('student.dashboard');
-})->middleware(['auth', 'verified']);
-
-Route::get('/lecturer', function () {
-    return view('lecturers.dashboard');
-})->middleware(['auth', 'verified']);
-
-Route::get('/staff', function () {
-    return view('staff.dashboard');
-})->middleware(['auth', 'verified']);
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
