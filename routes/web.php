@@ -31,8 +31,8 @@ Route::get('/admin', function () {
 })->middleware(['auth', 'verified'])->name('admin');
 
 Route::get('/students', function () {
-    return view('student.dashboard');
-});
+    return view('student.dashboard');})->middleware(['auth','verified'])->name('student');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
