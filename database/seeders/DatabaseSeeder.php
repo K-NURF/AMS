@@ -33,10 +33,21 @@ class DatabaseSeeder extends Seeder
             'country' => 'Germany',
         ]);
 
-        $students = \App\Models\User::factory(10)->create([
+        $students = \App\Models\User::factory(6)->create([
             'user_type' => 'student',
             'course' => 'BICS',
             'semester' => '1.1',
+            'religion' => 'Christian',
+            'high_school' => 'Strathmore School',
+            'DOB' => '2000-12-12',
+            'password' => '$2y$10$T2rH4.lab5y556n.LO3OOO7nzUDAn5Vikp0O//3aAFS9P3//BMst6', // password
+
+        ]);
+        $students = \App\Models\User::factory(4)->create([
+            'user_type' => 'student',
+            'course' => 'BICS',
+            'semester' => '1.1',
+            'country' => 'Burundi',
             'religion' => 'Christian',
             'high_school' => 'Strathmore School',
             'DOB' => '2000-12-12',
