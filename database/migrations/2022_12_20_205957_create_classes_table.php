@@ -15,10 +15,9 @@ return new class extends Migration
     {
         Schema::create('classes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')
-                ->constrained()
-
-                ->onDelete('cascade');
+            $table->unsignedBigInteger('lecturer_id');
+            $table->foreign('lecturer_id')->references('id')->on('users')->constrained()->onDelete('cascade');
+            $table->time('time');
             $table->timestamps();
         });
     }

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('country')->nullable();
             $table->string('religion')->nullable();
             $table->string('high_school')->nullable();
-            $table->string('time')->nullable();
+            $table->string('semester')->nullable();
             $table->date('DOB')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

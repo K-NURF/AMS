@@ -17,7 +17,7 @@ class Classes extends Model
         return $this->belongsTo(Units::class, 'units_id');
     }
 
-    public function student_classes(){
-        return $this->hasMany(Student_Classes::class, 'student_classes_id');
+    public function student__classes(){
+        return $this->hasMany(student__classes::class, 'student__classes_id');
     }
 }
