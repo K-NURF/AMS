@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(10)->create([
             'user_type' => 'student',
             'course' => 'BICS',
+            'time' => '1.1',
             'religion' => 'Christian',
             'high_school' => 'Strathmore School',
             'DOB' => '2000-12-12',
