@@ -90,16 +90,19 @@ class DatabaseSeeder extends Seeder
 
         for ($i = 34; $i <= 38; $i++) {
             Staff::factory()->create([
+                'staff_id' => $i,
                 'department' => 'Caffeteria'
             ]);
         }
         for ($i = 39; $i <= 43; $i++) {
             Staff::factory()->create([
+                'staff_id' => $i,
                 'department' => 'Clinic'
             ]);
         }
         for ($i = 44; $i <= 48; $i++) {
             Staff::factory()->create([
+                'staff_id' => $i,
                 'department' => 'Labs'
             ]);
         }
