@@ -37,8 +37,8 @@ Route::get('/admin', function () {
 })->middleware(['auth', 'verified'])->name('admin');
 
 Route::get('/students', function () {
-    return view('student.dashboard');
-});
+    return view('student.dashboard');});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -47,6 +47,14 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/applicants', [AdminController::class, 'applicants']);
     Route::get('/all_students', [AdminController::class, 'all_students']);
+    
+    Route::get('/availableunits', [StudentController::class, 'displayAllunits']);
+    Route::get('/registeredunits', [StudentController::class, 'displayRegUnits']);
+    Route::get('/grades', [StudentController::class, 'displayGrades']);
+    Route::get('/progress', [StudentController::class, 'displayProgress']);
+
+
+    
 });
 
 
