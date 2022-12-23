@@ -1,4 +1,10 @@
 <x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-l text-gray-800 leading-tight h-4">
+            All Students registered in the School
+        </h2>
+    </x-slot>
+
     @include('admin.partials._sidebar')
 
     <div class="main">
