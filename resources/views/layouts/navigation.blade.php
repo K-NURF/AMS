@@ -12,9 +12,27 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    @if (auth()->user()->user_type == 'admin')
                     <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @elseif(auth()->user()->user_type == 'lecturer')
+                    <x-nav-link :href="route('lecturer')" :active="request()->routeIs('lecturer')">
+                        {{ __('Dashboard') }}
+                    </x-nav-link>
+                    @elseif(auth()->user()->user_type == 'student')
+                    <x-nav-link :href="route('students')" :active="request()->routeIs('students')">
+                        {{ __('Dashboard') }}
+                    </x-nav-link>
+                    @elseif(auth()->user()->user_type == 'staff')
+                    <x-nav-link :href="route('staff')" :active="request()->routeIs('staff')">
+                        {{ __('Dashboard') }}
+                    </x-nav-link>
+                    @else
+                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                        {{ __('Dashboard') }}
+                    </x-nav-link>
+                    @endif
                 </div>
             </div>
 
