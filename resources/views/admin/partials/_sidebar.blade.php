@@ -7,7 +7,13 @@
             <a href="/applicants">New Applicants</a>
             <a href="/all_students">All Students</a>
         </div>
-        <a href="#">Lecturers</a>
+        <button class="dropdown-btn">Lecturers
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="{{ route('lec.index') }}">All Lecturers</a>
+            <a href="/assign_class">Assign Classes</a>
+        </div>
         <a href="#">Staff</a>
     </div>
 

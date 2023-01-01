@@ -1,4 +1,10 @@
 <x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-l text-gray-800 leading-tight h-4">
+            All Lecturers in the School
+        </h2>
+    </x-slot>
+
     @include('admin.partials._sidebar')
 
     <div class="main">
@@ -15,17 +21,17 @@
                     <th>High School</th>
                     <th>DOB</th>
                 </tr>
-                @foreach ($students as $student)
+                @foreach ($lecturers as $lecturer)
                     <tr class="p-2">
-                        <td class="p-2">{{ $student->id }}</td>
-                        <td class="p-2">{{ $student->name }}</td>
-                        <td class="p-2">{{ $student->email }}</td>
-                        <td class="p-2">{{ $student->course }}</td>
-                        <td class="p-2">{{ $student->phone_number }}</td>
-                        <td class="p-2">{{ $student->country }}</td>
-                        <td class="p-2">{{ $student->religion }}</td>
-                        <td class="p-2">{{ $student->high_school }}</td>
-                        <td class="p-2">{{ $student->DOB }}</td>
+                        <td class="p-2">{{ $lecturer->id }}</td>
+                        <td class="p-2">{{ $lecturer->name }}</td>
+                        <td class="p-2">{{ $lecturer->email }}</td>
+                        <td class="p-2">{{ $lecturer->course }}</td>
+                        <td class="p-2">{{ $lecturer->phone_number }}</td>
+                        <td class="p-2">{{ $lecturer->country }}</td>
+                        <td class="p-2">{{ $lecturer->religion }}</td>
+                        <td class="p-2">{{ $lecturer->high_school }}</td>
+                        <td class="p-2">{{ $lecturer->DOB }}</td>
                     </tr>
                 @endforeach
             </table>
