@@ -162,6 +162,8 @@ Route::post('/post_grades/{class_id}',[LecturerController::class,'postgrades']);
 //accept and decline staff
     Route::put('/staffapplicants/{applicant}', [AdminController::class, 'acceptstaff']);
     Route::delete('/staffapplicants/{applicant}', [AdminController::class, 'declinestaff']);
+
+    Route::get('/alllecturers', [AdminController::class, 'alllec']);
 });
 
 

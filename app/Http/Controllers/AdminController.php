@@ -313,4 +313,10 @@ class AdminController extends Controller
             return redirect('/applicants')->with('message', 'Staff Applicant Accepted');
 
         }
+
+        public function alllec()
+        {
+            $lecturer = User::where('user_type', 'lecturer')->get();
+            return view('admin.lecturers.all', ['lecturers' => $lecturer]);
+        }
 }

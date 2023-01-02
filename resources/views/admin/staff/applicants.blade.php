@@ -27,10 +27,22 @@
                 <td class="p-2">{{ $applicant->phone_number }}</td>
                 <td class="p-2">{{ $applicant->country }}</td>
                 <td class="p-2">
+                <form method="post" action="/staffapplicants/{{$applicant->id}}">
+                        @csrf 
+                        @method("PUT")
+                        
                     <x-primary-button> Accept </x-primary-button>
+                    <input type="hidden" name="user_type" value="staff">
+                    <input type="hidden" name="status" value=0>
+</form>
                 </td>
                 <td class="p-2">
+
+                <form method="post" action="/staffapplicants/{{$applicant->id}}">
+                    @csrf
+                    @method("DELETE")
                     <x-danger-button> Decline </x-danger-button>
+</form>
                 </td>
             </tr>
             @endforeach
