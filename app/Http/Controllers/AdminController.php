@@ -85,6 +85,7 @@ class AdminController extends Controller
         $data = $request->validate([
             'units_list_id' => 'required',
             'course' => 'required',
+            'semester' => 'required',
             
 
         ]);

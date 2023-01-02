@@ -26,6 +26,7 @@
         <div class="mt-4">
             <x-input-label for="religion" :value="__('religion')" />
             <select name="religion" value="{{ old('religion') }}">
+                <option value="">--</option>
                 <option value="Christian">Christian</option>
                 <option value="Islam">Islam</option>
                 <option value="Hindu">Hindu</option>
@@ -48,6 +49,25 @@
             <x-text-input id="DOB" class="block mt-1 w-full" type="date" name="DOB" :value="old('DOB')"
                 required />
             <x-input-error :messages="$errors->get('DOB')" class="mt-2" />
+        </div>
+
+        @php
+        $schools = DB::table('schools')->select('name')->get();
+        // dd($schools[0]->name);
+        @endphp
+
+        <!-- school -->
+        <div class="mt-4">
+            <x-input-label for="school" :value="__('School')" />
+            <select name="school" value="{{ old('school') }}">
+                <option value="">--</option>
+                <option value="1">{{$schools[0]->name}}</option>
+                <option value="2">{{$schools[1]->name}}</option>
+                <option value="3">{{$schools[2]->name}}</option>
+                <option value="4">{{$schools[3]->name}}</option>
+
+                </select>
+            <x-input-error :messages="$errors->get('school')" class="mt-2" />
         </div>
 
         <input type="hidden"name="user_type"value="lecturer">
@@ -312,51 +332,7 @@
             <x-input-error :messages="$errors->get('country')" class="mt-2" />
         </div>
 
-       
-
-
-        {{-- course --}}
-        <div class="mt-4">
-            <x-input-label for="course" :value="__('course')" />
-            <select name="course" value="{{ old('course') }}">
-                <option value="---Diploma Programmes---">---Diploma Programmes---</option>
-                <option value="DBCE">Diploma in Business Creation and
-                    Entrepreneurship</option>
-                <option value="DJNM">Diploma in Journalism and New Media</option>
-                <option value="DPro">Diploma in Procurement</option>
-                <option value="DIR">Diploma in International Relations</option>
-                <option value="DBM">Diploma in Business Management</option>
-                <option value="DBIT">Diploma in Business Information Technology
-                </option>
-                <option value=""></option>
-                <option value="---Undergraduate---">---Undergraduate---</option>
-                <option value="BC">Bachelor of Commerce</option>
-                <option value="BTM">Bachelor of Tourism Management</option>
-                <option value="BHM">Bachelor of Hospitality Management</option>
-                <option value="BBS:Finance">Bachelor of Business Science: Finance</option>
-                <option value="BBS:Financial Economics">Bachelor of Business Science:
-                    Financial Economics</option>
-                <option value="BBS: Actuarial Science">Bachelor of Business Science: Actuarial
-                    Science</option>
-                <option value="BICS">Bachelor of Science in
-                    Informatics and Computer Science</option>
-                <option value="BBIT">Bachelor of Business Information Technology
-                </option>
-                <option value="BST">Bachelor of Science in Telecommunications
-                </option>
-                <option value="BL">Bachelor of Laws</option>
-                <option value="BACS">Bachelor of Arts in Communication Studies
-                </option>
-                <option value="BAIS">Bachelor of Arts in International Studies
-                </option>
-                <option value="BSSCOM">Bachelor of Science in
-                    Supply Chain and Operations Management</option>
-                <option value="BFS">Bachelor of Financial Services</option>
-            </select>
-            <x-input-error :messages="$errors->get('course')" class="mt-2" />
-        </div>
-
-        <!-- Semester -->
+               {{-- <!-- Semester -->
         <div class="mt-4">
             <x-input-label for="semester" :value="__('semester')" />
             <select name="semester" value="{{ old('semester') }}">
@@ -371,7 +347,7 @@
                 <option value=3.2>3.3</option>            
                 </select>
             <x-input-error :messages="$errors->get('semester')" class="mt-2" />
-        </div>
+        </div> --}}
 
         <x-primary-button class="ml-4 mt-4">
             {{ __('Register') }}
