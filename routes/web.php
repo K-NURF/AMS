@@ -121,6 +121,7 @@ Route::post('/post_grades/{class_id}',[LecturerController::class,'postgrades']);
     Route::post('/create_session/{class_id}', [LecturerController::class, 'create_session']);
     Route::post('/processcoursework', [LecturerController::class, 'processcoursework']);
     Route::get('/addcoursework/{classes_id}', [LecturerController::class, 'create_coursework']);
+    Route::get('/view_coursework/{classes_id}', [StudentController::class, 'view_coursework']);
     Route::get('/reg_grad', function () {
         return view('student.gradReg');
     });

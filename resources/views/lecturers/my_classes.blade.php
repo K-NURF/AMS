@@ -39,7 +39,7 @@
                             </td>
                             <td class="p-2">
                         
-                                <a href="/addcoursework/{{$class->id}}"><x-primary-button> Coursework </x-primary-button> </a>
+                                <a href="/addcoursework/{{$class->id}}"><x-primary-button>Upload Coursework Materials</x-primary-button> </a>
                                 </td>
                                 <td class="p-2">
                                 <form method="POST" action="/add_assignment/{{$class->id}}">
