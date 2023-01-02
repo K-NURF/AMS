@@ -28,7 +28,7 @@
                         <td class="p-2">
                         <form method="POST" action="/create_session/{{$class->id}}">
                             @csrf
-                            <x-primary-button> Attendance </x-primary-button>
+                            <x-primary-button>update Attendance </x-primary-button>
                         </form>
                         </td>
                         <td class="p-2">
@@ -37,6 +37,16 @@
                                 <x-primary-button> post grades </x-primary-button>
                             </form>
                             </td>
+                            <td class="p-2">
+                        
+                                <a href="/addcoursework/{{$class->id}}"><x-primary-button>Upload Coursework Materials</x-primary-button> </a>
+                                </td>
+                                <td class="p-2">
+                                <form method="POST" action="/add_assignment/{{$class->id}}">
+                                    @csrf
+                                    <x-primary-button> Assignment </x-primary-button>
+                                </form>
+                                </td>
                        
 
                     </tr>

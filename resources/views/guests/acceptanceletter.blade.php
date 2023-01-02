@@ -30,13 +30,7 @@
                             :value="old('high_school')" required autofocus />
                         <x-input-error :messages="$errors->get('high_school')" class="mt-2" />
                     </div>
-                    <!-- DOB -->
-                    <div>
-                        <x-input-label for="DOB" :value="__('Date of Birth')" />
-                        <x-text-input id="DOB" class="block mt-1 w-full" type="date" name="DOB"
-                            :value="old('DOB')" required autofocus />
-                        <x-input-error :messages="$errors->get('DOB')" class="mt-2" />
-                    </div>
+
                     <input type="hidden" name="semester" value=1.1>
 
                     <x-primary-button class="ml-4 mt-4">

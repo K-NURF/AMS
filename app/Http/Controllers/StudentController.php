@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Classes;
-use App\Models\studentClasses;
 use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rules;
 use App\Models\Units;
-use Illuminate\Support\Facades\DB;
+use App\Models\Classes;
+use App\Models\coursework;
+use Illuminate\Http\Request;
 use App\Models\Announcements;
 use App\Models\graduationList;
+use App\Models\studentClasses;
+use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
@@ -37,6 +38,9 @@ class StudentController extends Controller
         $applicant = User::create($data);
 
         return redirect('/')->with('message', 'Appllication sent successfully');
+    }
+    public function grades(){
+        return redirect('/grades')->with('message', 'No grades available');
     }
     public function displayAllUnits()
     {
@@ -83,7 +87,7 @@ class StudentController extends Controller
             ->join('units', 'classes.units_id', 'units.id')
             ->join('units_lists', 'units.units_list_id', 'units_lists.id')
             ->where('student_classes.student_id', auth()->user()->id)
-            ->select('units_lists.name', 'units.course', 'units.semester')
+            ->select('units_lists.name', 'units.course', 'units.semester', 'classes.id as class_id')
             ->get();
 
 
@@ -144,5 +148,12 @@ class StudentController extends Controller
             ->get();
 
         return view('admin.students.graduants', ['gradApplicants' => $gradApplicants]);
+    }
+
+    public function view_coursework(Classes $classes_id){
+        
+        $files = coursework::where('classes_id', $classes_id->id)->get();
+
+        return view('student.units.materials', ['files' => $files]);
     }
 }

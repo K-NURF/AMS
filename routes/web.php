@@ -9,7 +9,7 @@ use App\Http\Controllers\gradesController;
 use App\Http\Controllers\LecturerController;
 use App\http\Controllers\StaffController;
 use App\Http\Controllers\TimetableController;
-
+use PhpParser\Node\Stmt\Return_;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,6 +79,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/grades', [StudentController::class, 'displayGrades']);
     Route::get('/progress', [StudentController::class, 'displayProgress']);
     Route::get('/gradepost', [StudentController::class, 'postgrades']);
+    Route::get('/mygrades',[StudentController::class, 'grades']);
+
 
     Route::get('/create_class', [AdminController::class, 'create_class']);
     Route::post('/create_class', [AdminController::class, 'store_class']);
@@ -121,6 +123,7 @@ Route::post('/post_grades/{class_id}',[LecturerController::class,'postgrades']);
     Route::post('/create_session/{class_id}', [LecturerController::class, 'create_session']);
     Route::post('/processcoursework', [LecturerController::class, 'processcoursework']);
     Route::get('/addcoursework/{classes_id}', [LecturerController::class, 'create_coursework']);
+    Route::get('/view_coursework/{classes_id}', [StudentController::class, 'view_coursework']);
     Route::get('/reg_grad', function () {
         return view('student.gradReg');
     });

@@ -24,7 +24,10 @@
                         <td class="p-2">{{ $unit->course }}</td>
                         <td class="p-2">{{ $unit->name }}</td>
                         
+                        <td class="p-2">
                         
+                            <a href="/view_coursework/{{$unit->class_id}}"><x-primary-button>Coursework Materials</x-primary-button> </a>
+                            </td>
 
                     </tr>
                 @endforeach
