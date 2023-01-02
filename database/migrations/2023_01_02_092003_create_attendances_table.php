@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('class_session_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('users')->constrained()->onDelete('cascade');
+            $table->integer('attendance')->default(0);
             $table->timestamps();
         });
     }

@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('units', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->foreignId('units_list_id')->constrained()->onDelete('cascade');
             $table->string('course');
+            $table->string('semester');
             $table->timestamps();
         });
     }

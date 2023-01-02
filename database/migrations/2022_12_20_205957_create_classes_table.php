@@ -17,8 +17,11 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('lecturer_id');
             $table->foreign('lecturer_id')->references('id')->on('users')->constrained()->onDelete('cascade');
-            $table->foreignId('units_id')->constrained()->onDelete('cascade');
-            $table->time('time');
+            $table->foreignId('units_id')->constrained()->onUpdate('cascade');
+            $table->integer('weekday');
+            $table->time('start_time');
+            $table->time('end_time');
+            $table->integer('available')->default(0);
             $table->timestamps();
         });
     }

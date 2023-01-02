@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('class_sessions', function (Blueprint $table) {
             $table->id();
+            $table->time('start_time');
+            $table->time('end_time');
+            $table->date('date');
+            $table->foreignId('classes_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

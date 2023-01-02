@@ -13,8 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('graduation_list', function (Blueprint $table) {
+        Schema::create('graduation_lists', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('users')->constrained()->onDelete('cascade');
+            $table->integer('status');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('graduation_list');
+        Schema::dropIfExists('graduation_lists');
     }
 };

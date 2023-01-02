@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('exams', function (Blueprint $table) {
             $table->id();
+            $table->string('Name');
+            $table->foreignId('classes_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
