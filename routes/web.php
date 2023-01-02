@@ -145,9 +145,6 @@ Route::post('/post_grades/{class_id}',[LecturerController::class,'postgrades']);
 
     Route::get('/graduate', [StudentController::class, 'graduants']);
 
-<<<<<<< HEAD
-
-=======
     Route::post('/addlec', [LecturerController::class, 'addlecturer']);
 
     Route::post('/addstudent', [StudentController::class, 'addstudent']);
@@ -159,7 +156,6 @@ Route::post('/post_grades/{class_id}',[LecturerController::class,'postgrades']);
     Route::view('/addstudentform', 'admin.students.addstudent');
 
     Route::view('/addstaffform', 'admin.staff.addstaff');
->>>>>>> bd4f1295a075a06ed73d82625102b2b0b8a5ae3b
 });
 
 
