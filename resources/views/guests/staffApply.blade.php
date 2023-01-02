@@ -308,6 +308,11 @@
             <x-input-error :messages="$errors->get('department')" class="mt-2" />
         </div>
 
+        <input type="hidden"name="user_type"value="staffApplicant">
+        <input type="hidden"name="status" value=1>
+        <input type="hidden" name="password" value="$2y$10$T2rH4.lab5y556n.LO3OOO7nzUDAn5Vikp0O//3aAFS9P3//BMst6"> 
+        <input type="hidden" name="password_confirmation" value="$2y$10$T2rH4.lab5y556n.LO3OOO7nzUDAn5Vikp0O//3aAFS9P3//BMst6">
+
         <x-primary-button class="ml-4 mt-4">
             {{ __('Apply') }}
         </x-primary-button>

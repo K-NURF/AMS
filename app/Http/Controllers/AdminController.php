@@ -146,6 +146,10 @@ class AdminController extends Controller
 
         $applicant = User::create($data);
 
+        $details = ['staff_id' => $applicant->id, 'department' => $data['department']];
+
+        Staff::create($details);
+
         return redirect('/')->with('message', 'Application sent successfully');
     }
 
