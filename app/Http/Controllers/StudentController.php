@@ -23,4 +23,17 @@ class StudentController extends Controller
 
 
     }
+    public function displayAllUnits(){
+        return view('student.units.availableunits');
+    }
+    public function displayRegUnits(){
+        return view('student.units.registeredunits');
+    }
+    public function displayGrades(){
+        return view('student.report.grades');
+    }
+    public function displayProgress(){
+        return view('student.report.progress');
+    }
+    
 }

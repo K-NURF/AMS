@@ -11,4 +11,9 @@ class AdminController extends Controller
         $list = User::where('user_type', 'applicant')->get();
         return view('admin.students.applicants', ['applicants' => $list]);
     }
+
+    public function all_students(){
+        $list = User::where('user_type', 'student')->get();
+        return view('admin.students.all', ['students' => $list]);
+    }
 }

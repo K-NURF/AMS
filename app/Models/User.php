@@ -25,6 +25,7 @@ class User extends Authenticatable
         'course',
         'religion',
         'high_school',
+        'time',
         'DOB',
         'phone_number',
         'country',
@@ -48,4 +49,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function classes() {
+        return $this->hasMany(Classes::class, 'user_id');
+    }
+    public function student__classes() {
+        return $this->hasMany(student__classes::class, 'user_id');
+    }
 }
