@@ -30,7 +30,6 @@ class StudentController extends Controller
             'country' => 'required',
             'course' => 'required',
             'user_type' => 'required',
-            'DOB' => 'required',
             'status' => 'required',
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
@@ -131,7 +130,7 @@ class StudentController extends Controller
         return redirect('/students')->with('message', 'Registration Sent successfully');
     }
 
-   
+
 
     public function graduants()
     {
@@ -145,26 +144,5 @@ class StudentController extends Controller
             ->get();
 
         return view('admin.students.graduants', ['gradApplicants' => $gradApplicants]);
-    }
-
-    public function addstudent(Request $request)
-    {
-        $data = $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
-            'phone_number' => 'required',
-            'country' => 'required',
-            'religion' => 'required',
-            'semester' => 'required',
-            'course' => 'required',
-            'user_type' => 'required',
-            'DOB' => 'required',
-            'high_school' => 'required',
-            'status' => 'required',
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
-
-        $student = User::create($data);
-        return redirect('/admin')->with('message', 'Student registered succesfully'); 
     }
 }
