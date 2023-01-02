@@ -8,12 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Units extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'units_list_id',
-        'course',
-        'semester',
-        'name',
-    ];
+    
 
     protected $fillable = [
         'units_list_id',
