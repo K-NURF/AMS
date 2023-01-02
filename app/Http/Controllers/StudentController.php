@@ -39,6 +39,9 @@ class StudentController extends Controller
 
         return redirect('/')->with('message', 'Appllication sent successfully');
     }
+    public function grades(){
+        return redirect('/grades')->with('message', 'No grades available');
+    }
     public function displayAllUnits()
     {
         if (auth()->user()->user_type != 'student') {

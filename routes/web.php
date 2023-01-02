@@ -9,7 +9,7 @@ use App\Http\Controllers\gradesController;
 use App\Http\Controllers\LecturerController;
 use App\http\Controllers\StaffController;
 use App\Http\Controllers\TimetableController;
-
+use PhpParser\Node\Stmt\Return_;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,6 +79,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/grades', [StudentController::class, 'displayGrades']);
     Route::get('/progress', [StudentController::class, 'displayProgress']);
     Route::get('/gradepost', [StudentController::class, 'postgrades']);
+    Route::get('/mygrades',[StudentController::class, 'grades']);
+
 
     Route::get('/create_class', [AdminController::class, 'create_class']);
     Route::post('/create_class', [AdminController::class, 'store_class']);

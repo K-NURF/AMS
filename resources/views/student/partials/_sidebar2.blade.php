@@ -15,7 +15,7 @@
         <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-container">
-        <a href="#">My grades</a>
+        <a href="/mygrades">My grades</a>
         <a href="#">My Report</a>
 
     </div>
