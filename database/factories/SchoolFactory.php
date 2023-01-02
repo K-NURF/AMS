@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Units>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\School>
  */
-class UnitsFactory extends Factory
+class SchoolFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +17,7 @@ class UnitsFactory extends Factory
     public function definition()
     {
         return [
-            'course' => 'BICS',
-            'semester' => '1.1'
+            //
         ];
     }
 }

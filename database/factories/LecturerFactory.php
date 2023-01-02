@@ -17,7 +17,7 @@ class LecturerFactory extends Factory
     public function definition()
     {
         return [
-            'courses_taught' => 'BICS'
+        
         ];
     }
 }

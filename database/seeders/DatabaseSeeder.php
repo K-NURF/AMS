@@ -4,12 +4,15 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\User;
 use App\Models\Staff;
 use App\Models\Units;
+use App\Models\School;
 use App\Models\Classes;
 use App\Models\Lecturer;
+use App\Models\unitsLists;
+use App\Models\studentClasses;
 use Illuminate\Database\Seeder;
-use App\Models\student__classes;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,17 +23,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        if(!User::where('email', 'test@example.com')->exists()){
         \App\Models\User::factory(1)->create([
             'email' => 'test@example.com',
             'password' => '$2y$10$T2rH4.lab5y556n.LO3OOO7nzUDAn5Vikp0O//3aAFS9P3//BMst6', // password
             'user_type' => 'admin',
             'religion' => 'Christian',
-
-
         ]);
+    }
         \App\Models\User::factory(10)->create([
             'user_type' => 'applicant',
             'country' => 'Germany',
+            'status'=> '1',
         ]);
 
         $students = \App\Models\User::factory(6)->create([
@@ -71,25 +75,125 @@ class DatabaseSeeder extends Seeder
 
         ]);
 
-        Units::factory(7)->create();
+        $schools = ['School of Mathematics', 'School of Business', 'School of Computing', 'School of Engineering'];
 
-        for ($i = 22; $i <= 28; $i++) {
-            Classes::factory()->create([
-                'lecturer_id' => $i,
-                'units_id' => ($i - 21),
+        for ($i = 0; $i <= 3; $i++) {
+            School::factory()->create([
+                'name' => $schools[$i]
             ]);
         }
 
-        for ($i = 1; $i <= 7; $i++) {
-            student__classes::factory()->create([
+        for ($i = 22; $i <= 27; $i++) {
+            Lecturer::factory()->create([
+                'lecturer_id' => $i,
+                'school_id' => '3'
+            ]);
+        }
+
+        Lecturer::factory()->create([
+            'lecturer_id' => '28',
+            'school_id' => '1'
+        ]);
+
+        $units = ['Linear algebra', 'Discrete math', 'Pure mathematics', 'Applied mathematics', 'Business mathematics', 'Entrepreneurship', 'Accounting', 'Economics', 'Business Law', 'Human Resource Management', 'Artificial Intelligence', 'Computer Fundamentals', 'Object Oriented Programming', 'Web Application', 'Mobile Application Development', 'Internet Application Programming', 'Power Mechanics', 'Electrical Installation', 'AutoCAD', 'Physics', 'Civil Engineering Basics'];
+
+        for($i = 0; $i <= 4; $i++){
+            unitsLists::factory()->create([
+                'name' => $units[$i],
+                'school_id' => '1'
+            ]);
+        }
+        for($i = 5; $i <= 9; $i++){
+            unitsLists::factory()->create([
+                'name' => $units[$i],
+                'school_id' => '2'
+            ]);
+        }
+        for($i = 10; $i <= 15; $i++){
+            unitsLists::factory()->create([
+                'name' => $units[$i],
+                'school_id' => '3'
+            ]);
+        }
+        for($i = 16; $i <= 20; $i++){
+            unitsLists::factory()->create([
+                'name' => $units[$i],
+                'school_id' => '4'
+            ]);
+        }
+
+        for($i = 10; $i <= 15; $i++){
+            Units::factory()->create([
+                'units_list_id' => $i
+            ]);
+
+        }
+        $start_time = ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00'] ;
+        $end_time = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00'] ;
+
+
+        for ($i = 22; $i <= 27; $i++) {
+            Classes::factory()->create([ //lecterers in school of computing
+                'lecturer_id' => $i,
+                'units_id' => ($i - 21),
+                'weekday' => ($i - 21),
+                'start_time' => $start_time[($i-22)],
+                'end_time' => $end_time[($i-22)],
+            ]);
+        }
+
+        for ($i = 1; $i <= 6; $i++) {
+            studentClasses::factory()->create([
                 'student_id' => '12',
                 'classes_id' => $i
             ]);
         }
-
-        for ($i = 22; $i <= 28; $i++) {
-            Lecturer::factory()->create([
-                'lecturer_id' => $i,
+        for ($i = 1; $i <= 6; $i++) {
+            studentClasses::factory()->create([
+                'student_id' => '13',
+                'classes_id' => $i
+            ]);
+        }
+        for ($i = 1; $i <= 6; $i++) {
+            studentClasses::factory()->create([
+                'student_id' => '15',
+                'classes_id' => $i
+            ]);
+        }
+        for ($i = 1; $i <= 6; $i++) {
+            studentClasses::factory()->create([
+                'student_id' => '16',
+                'classes_id' => $i
+            ]);
+        }
+        for ($i = 1; $i <= 6; $i++) {
+            studentClasses::factory()->create([
+                'student_id' => '17',
+                'classes_id' => $i
+            ]);
+        }
+        for ($i = 1; $i <= 6; $i++) {
+            studentClasses::factory()->create([
+                'student_id' => '18',
+                'classes_id' => $i
+            ]);
+        }
+        for ($i = 1; $i <= 6; $i++) {
+            studentClasses::factory()->create([
+                'student_id' => '19',
+                'classes_id' => $i
+            ]);
+        }
+        for ($i = 1; $i <= 6; $i++) {
+            studentClasses::factory()->create([
+                'student_id' => '20',
+                'classes_id' => $i
+            ]);
+        }
+        for ($i = 1; $i <= 6; $i++) {
+            studentClasses::factory()->create([
+                'student_id' => '21',
+                'classes_id' => $i
             ]);
         }
 
