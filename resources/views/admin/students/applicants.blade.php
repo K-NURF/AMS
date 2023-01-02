@@ -32,7 +32,7 @@
                                 @method('PUT')
                                 <input type="hidden" name="user_type" value="student">
                                 <input type="hidden" name="status" value=0>
-                                
+                                <input type="hidden" name="semester" value=1.1>
                                 <x-primary-button> Accept </x-primary-button>
                             </form>
                         </td>

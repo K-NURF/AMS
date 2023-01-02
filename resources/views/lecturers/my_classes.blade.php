@@ -28,7 +28,7 @@
                         <td class="p-2">
                         <form method="POST" action="/create_session/{{$class->id}}">
                             @csrf
-                            <x-primary-button> Attendance </x-primary-button>
+                            <x-primary-button>update Attendance </x-primary-button>
                         </form>
                         </td>
                         <td class="p-2">

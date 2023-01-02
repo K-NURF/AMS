@@ -33,12 +33,6 @@
 
 </div>
 
-<a href="/student_announcement">Announcements</a>
-    <a href="/reg_grad">Register for Craduation</a>
-    <a href="/post_grade">lec post grade</a>
-    
-    
-
 <script>
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";

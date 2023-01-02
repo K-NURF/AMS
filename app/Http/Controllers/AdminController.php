@@ -52,6 +52,7 @@ class AdminController extends Controller
                 'status' => 'required',
                 'semester' => 'required'
             ]);
+
             $data['applicant'] = auth()->user()->id;
     
             $applicant->update($data);
@@ -130,9 +131,7 @@ class AdminController extends Controller
 
     public function store_staffApplications(Request $request)
     {
-        if (auth()->user()->user_type != 'admin') {
-            abort(403, 'Forbidden!!!');
-        }
+
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
