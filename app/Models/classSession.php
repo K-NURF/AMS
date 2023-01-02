@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class student__classes extends Model
+class classSession extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'start_time',
+        'end_time',
         'classes_id',
-        'student_id'
+        'date',
     ];
 }
