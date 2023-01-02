@@ -130,7 +130,7 @@ class StudentController extends Controller
         return redirect('/students')->with('message', 'Registration Sent successfully');
     }
 
-   
+
 
     public function graduants()
     {
