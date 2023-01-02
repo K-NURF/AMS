@@ -50,7 +50,7 @@ class AdminController extends Controller
             $data = $request->validate([
                 'user_type' => 'required',
                 'status' => 'required',
-                'semester' => 'required'
+                
             ]);
             $data['applicant'] = auth()->user()->id;
     
