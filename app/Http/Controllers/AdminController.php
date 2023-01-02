@@ -287,4 +287,40 @@ class AdminController extends Controller
         return redirect('/login');
 
     }
+
+    //declinestaffapplicant
+    public function declinestaff(User $applicant)
+    {
+        if (auth()->user()->user_type != 'admin') {
+            abort(403, 'Forbidden!!!');
+        }
+
+        $applicant->delete();
+        return redirect('/applicants')->with('message', 'Staff applicant denied');
+    }
+
+        //accept staffapplicant
+        public function acceptstaff(Request $request, User $applicant)
+        {
+            if (auth()->user()->user_type != 'admin') {
+                abort(403, 'Forbidden!!!');
+            }
+            $data = $request->validate([
+                'user_type' => 'required',    
+                'status' => 'required',
+                //'semester' => 'required'
+            ]);
+            $data['applicant'] = auth()->user()->id;
+    
+            $applicant->update($data);
+    
+            return redirect('/applicants')->with('message', 'Staff Applicant Accepted');
+
+        }
+
+        public function alllec()
+        {
+            $lecturer = User::where('user_type', 'lecturer')->get();
+            return view('admin.lecturers.all', ['lecturers' => $lecturer]);
+        }
 }
