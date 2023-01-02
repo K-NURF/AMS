@@ -6,13 +6,15 @@
         </h2>
     </x-slot>
     @include('student.partials._sidebar2')
-
+    <div class="main">
     <x-card>
         <table>
             <tr>
 
                 <th>TestName</th>
+                <th></th>
                 <th>Date</th>
+                <th></th>
                 <th>grade</th>
                 <th></th>
 
@@ -21,4 +23,5 @@
             
         </table>
     </x-card>
+    </div>
 </x-app-layout>
