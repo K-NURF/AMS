@@ -21,7 +21,7 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-          <!--  <a href="{{ route('lec.index') }}">All Lecturers</a> -->
+          
             <a href="/addlecform">Register Lecturer</a>
 
         </div>
