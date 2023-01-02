@@ -5,10 +5,9 @@
         <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-container">
-        <a href="#">Assignments</a>
-        <a href="#">Classwork</a>
+
         <a href="/timetable">My Timetable</a>
-        <a href="/registeredunits">Registered Units</a>
+        <a href="/registeredunits">My Classes</a>
         <a href="/availableunits">Register for Units</a>
     </div>
     

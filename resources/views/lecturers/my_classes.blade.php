@@ -37,6 +37,16 @@
                                 <x-primary-button> post grades </x-primary-button>
                             </form>
                             </td>
+                            <td class="p-2">
+                        
+                                <a href="/addcoursework/{{$class->id}}"><x-primary-button> Coursework </x-primary-button> </a>
+                                </td>
+                                <td class="p-2">
+                                <form method="POST" action="/add_assignment/{{$class->id}}">
+                                    @csrf
+                                    <x-primary-button> Assignment </x-primary-button>
+                                </form>
+                                </td>
                        
 
                     </tr>
