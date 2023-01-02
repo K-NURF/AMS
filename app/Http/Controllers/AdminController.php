@@ -275,7 +275,6 @@ class AdminController extends Controller
         $data = $request->validate([
             'religion' => 'required',
             'high_school' => 'required',
-            'DOB' => 'required',
             'semester' => 'required',
         ]);
         // dd($data);
