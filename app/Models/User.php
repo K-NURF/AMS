@@ -29,6 +29,8 @@ class User extends Authenticatable
         'DOB',
         'phone_number',
         'country',
+        'status',
+        'semester',
     ];
 
     /**
@@ -53,7 +55,7 @@ class User extends Authenticatable
     public function classes() {
         return $this->hasMany(Classes::class, 'user_id');
     }
-    public function student__classes() {
-        return $this->hasMany(student__classes::class, 'user_id');
+    public function studentClasses() {
+        return $this->hasMany(studentClasses::class, 'user_id');
     }
 }

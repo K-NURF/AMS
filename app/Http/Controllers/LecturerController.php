@@ -315,5 +315,25 @@ $coursework['file']=$request->file('file')->store('materials','public');
         }
         return view('lecturers.add_coursework', ['classes_id' => $classes_id]);
     }
+
+    public function addlecturer(Request $request)
+    {
+        $data = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+            'phone_number' => 'required',
+            'country' => 'required',
+            'religion' => 'required',
+            'semester' => 'required',
+            'course' => 'required',
+            'user_type' => 'required',
+            'DOB' => 'required',
+            'status' => 'required',
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ]);
+
+        $lecturer = User::create($data);
+        return redirect('/admin')->with('message', 'Lecturer registered succesfully'); 
+    }
     
 }

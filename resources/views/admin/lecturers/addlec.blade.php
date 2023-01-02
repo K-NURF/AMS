@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <form method="POST" action="/apply">
+    <form method="POST" action="/addlec">
         @csrf
 
         <!-- Name -->
@@ -10,25 +10,36 @@
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
+       
+
+         <!-- Phone number -->
+         <div class="mt-4">
+            <x-input-label for="phone_number" :value="__('phone_number')" />
+            <input type="telephone" class="border border-gray-200 rounded p-2 w-full" name="phone_number" placeholder="254712345678" pattern="[0-9]{12}" value="{{old('telephone')}}" />
+            <small>Format: 254712345678</small>
+            <x-input-error :messages="$errors->get('phone_number')" class="mt-2" />
+        </div>
+
+               
+
+        <!-- Religion -->
+        <div class="mt-4">
+            <x-input-label for="religion" :value="__('religion')" />
+            <select name="religion" value="{{ old('religion') }}">
+                <option value="Christian">Christian</option>
+                <option value="Islam">Islam</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Other">Other</option>
+                </select>
+            <x-input-error :messages="$errors->get('religion')" class="mt-2" />
+        </div>
+
         <!-- Email Address -->
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
                 required />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <input type="hidden"name="user_type"value="applicant">
-        <input type="hidden"name="status" value=1>
-        <input type="hidden" name="password" value="$2y$10$T2rH4.lab5y556n.LO3OOO7nzUDAn5Vikp0O//3aAFS9P3//BMst6"> 
-        <input type="hidden" name="password_confirmation" value="$2y$10$T2rH4.lab5y556n.LO3OOO7nzUDAn5Vikp0O//3aAFS9P3//BMst6">
-
-        <!-- Phone number -->
-        <div class="mt-4">
-            <x-input-label for="phone_number" :value="__('phone_number')" />
-            <input type="telephone" class="border border-gray-200 rounded p-2 w-full" name="phone_number" placeholder="254712345678" pattern="[0-9]{12}" value="{{old('telephone')}}" />
-            <small>Format: 254712345678</small>
-            <x-input-error :messages="$errors->get('phone_number')" class="mt-2" />
         </div>
 
          <!-- DateofBirth -->
@@ -39,8 +50,13 @@
             <x-input-error :messages="$errors->get('DOB')" class="mt-2" />
         </div>
 
-        <!-- Country -->
-        <div class="mt-4">
+        <input type="hidden"name="user_type"value="lecturer">
+        <input type="hidden"name="status" value=0>
+        <input type="hidden" name="password" value="$2y$10$T2rH4.lab5y556n.LO3OOO7nzUDAn5Vikp0O//3aAFS9P3//BMst6"> 
+        <input type="hidden" name="password_confirmation" value="$2y$10$T2rH4.lab5y556n.LO3OOO7nzUDAn5Vikp0O//3aAFS9P3//BMst6">
+
+     <!-- Country -->
+     <div class="mt-4">
             <x-input-label for="country" :value="__('country')" />
             <select name="country" value="{{ old('country') }}">
                 <option value="Afghanistan">Afghanistan</option>
@@ -296,6 +312,9 @@
             <x-input-error :messages="$errors->get('country')" class="mt-2" />
         </div>
 
+       
+
+
         {{-- course --}}
         <div class="mt-4">
             <x-input-label for="course" :value="__('course')" />
@@ -337,8 +356,25 @@
             <x-input-error :messages="$errors->get('course')" class="mt-2" />
         </div>
 
+        <!-- Semester -->
+        <div class="mt-4">
+            <x-input-label for="semester" :value="__('semester')" />
+            <select name="semester" value="{{ old('semester') }}">
+                <option value=1.1>1.1</option>
+                <option value=1.2>1.2</option>
+                <option value=1.3>1.3</option>
+                <option value=2.1>2.1</option>
+                <option value=2.2>2.2</option>
+                <option value=2.3>2.3</option>
+                <option value=3.1>3.1</option>
+                <option value=3.2>3.2</option>
+                <option value=3.2>3.3</option>            
+                </select>
+            <x-input-error :messages="$errors->get('semester')" class="mt-2" />
+        </div>
+
         <x-primary-button class="ml-4 mt-4">
-            {{ __('Apply') }}
+            {{ __('Register') }}
         </x-primary-button>
         </div>
     </form>
