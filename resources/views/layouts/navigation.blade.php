@@ -5,8 +5,8 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="/">
-                        <img class="h-16" src="/images/logo.png" alt="">
+                    <a href="{{ route('admin') }}">
+                        <img class="h-16" src="/images/schoologo.png" alt="">
                     </a>
                 </div>
 
