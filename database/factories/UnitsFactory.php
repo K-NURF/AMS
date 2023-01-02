@@ -17,8 +17,8 @@ class UnitsFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->company(),
-            'course' => 'BICS'
+            'course' => 'BICS',
+            'semester' => '1.1'
         ];
     }
 }

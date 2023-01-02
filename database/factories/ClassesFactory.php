@@ -17,7 +17,7 @@ class ClassesFactory extends Factory
     public function definition()
     {
         return [
-            'time' => '8:15',
+            
         ];
     }
 }

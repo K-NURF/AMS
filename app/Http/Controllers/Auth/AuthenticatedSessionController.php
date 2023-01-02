@@ -29,22 +29,24 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request)
     {
         $request->authenticate();
-
+        $status= auth()->user()->status;
+        if($status == 1){
+            return route('logout');}
+            
         $request->session()->regenerate();
-
+        
         $user_type = auth()->user()->user_type;
         if($user_type == "admin"){
             return redirect('/admin');
         }else if($user_type == "student"){
-            return redirect('/student');
+            return redirect('/students');
         }else if($user_type == "lecturer"){
             return redirect('/lecturer');
         }else if($user_type == "staff"){
             return redirect('/staff');
         }else{
             return redirect('/');
-        }
-    }
+        }    }
 
     /**
      * Destroy an authenticated session.

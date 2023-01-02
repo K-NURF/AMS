@@ -19,6 +19,9 @@
         </div>
 
         <input type="hidden"name="user_type"value="applicant">
+        <input type="hidden"name="status" value=1>
+        <input type="hidden" name="password" value="$2y$10$T2rH4.lab5y556n.LO3OOO7nzUDAn5Vikp0O//3aAFS9P3//BMst6"> 
+        <input type="hidden" name="password_confirmation" value="$2y$10$T2rH4.lab5y556n.LO3OOO7nzUDAn5Vikp0O//3aAFS9P3//BMst6">
 
         <!-- Phone number -->
         <div class="mt-4">
@@ -26,6 +29,14 @@
             <input type="telephone" class="border border-gray-200 rounded p-2 w-full" name="phone_number" placeholder="254712345678" pattern="[0-9]{12}" value="{{old('telephone')}}" />
             <small>Format: 254712345678</small>
             <x-input-error :messages="$errors->get('phone_number')" class="mt-2" />
+        </div>
+
+         <!-- DateofBirth -->
+         <div class="mt-4">
+            <x-input-label for="DOB" :value="__('DOB')" />
+            <x-text-input id="DOB" class="block mt-1 w-full" type="date" name="DOB" :value="old('DOB')"
+                required />
+            <x-input-error :messages="$errors->get('DOB')" class="mt-2" />
         </div>
 
         <!-- Country -->

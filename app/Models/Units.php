@@ -15,6 +15,13 @@ class Units extends Model
         'name',
     ];
 
+    protected $fillable = [
+        'units_list_id',
+        'course',
+        'semester',
+        'name',
+    ];
+
     public function classes() {
         return $this->hasMany(Classes::class, 'classes_id');
     }
