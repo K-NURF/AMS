@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\grades;
 use App\Models\Classes;
 use App\Models\courses;
+use App\Models\Lecturer;
 use App\Models\attendance;
 use App\Models\coursework;
 use App\Models\classSession;
 use Illuminate\Http\Request;
-
 use App\Models\Announcements;
+use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\DB;
 
 
@@ -324,15 +326,19 @@ $coursework['file']=$request->file('file')->store('materials','public');
             'phone_number' => 'required',
             'country' => 'required',
             'religion' => 'required',
-            'semester' => 'required',
-            'course' => 'required',
             'user_type' => 'required',
             'DOB' => 'required',
+            'school' => 'required',
             'status' => 'required',
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $lecturer = User::create($data);
+
+        $details = ['lecturer_id' => $lecturer->id, 'school_id' => $data['school']];
+
+        Lecturer::create($details);
+        
         return redirect('/admin')->with('message', 'Lecturer registered succesfully'); 
     }
     

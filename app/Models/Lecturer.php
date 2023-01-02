@@ -11,6 +11,6 @@ class Lecturer extends Model
 
     protected $fillable = [
         'lecturer_id',
-        'courses_taught'
+        'school_id'
     ];
 }
